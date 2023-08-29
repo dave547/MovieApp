@@ -21,6 +21,8 @@ import { Filter } from "../Filter";
 // ]
 
 // add api stuff back
+const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<<api_key>>";
+const CONFIG_URL = "https://api.themoviedb.org/3/configuration?api_key=<<api_key>>"
 
 export function MoviesList() {
     const [filter, setFilter] = useState("")
