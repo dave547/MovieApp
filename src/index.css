@@ -25,3 +25,29 @@ input{
   margin:0 20px;
   width: 60vw;
 }
+
+
+.backdrop{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.detail-details{
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  color: #333;
+  margin: 400px 0 0 0;
+  display: flex;
+  text-align: left;
+  gap: 20px;
+  padding: 20px;
+}
+
+.detail-poster{
+  position: relative;
+  margin-top: -160px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}

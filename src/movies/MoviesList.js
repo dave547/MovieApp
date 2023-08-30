@@ -21,17 +21,18 @@ import { Filter } from "../Filter";
 // ]
 
 // add api stuff back
-const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<<api_key>>";
-const CONFIG_URL = "https://api.themoviedb.org/3/configuration?api_key=<<api_key>>"
+const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=";
+const CONFIG_URL = "https://api.themoviedb.org/3/configuration?api_key="
 
 export function MoviesList() {
+
     const [filter, setFilter] = useState("")
     const [movies, setMovies] = useState([])
     const [config, setConfig] = useState({})
   
     const getMovies = async () => {
       try {
-        const res = await fetch(API_URL)
+        const res = await fetch(API_URL + process.env.REACT_APP_MOVIE_API)
         const movies = await res.json()
         setMovies(movies.results)
       } catch (e) {
@@ -40,7 +41,7 @@ export function MoviesList() {
     }
     const getConfig = async () => {
       try {
-        const res = await fetch(CONFIG_URL)
+        const res = await fetch(CONFIG_URL + process.env.REACT_APP_MOVIE_API)
         const config = await res.json()
         setConfig(config)
       } catch (e) {
